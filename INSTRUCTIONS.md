@@ -5,11 +5,13 @@ suporte e iniciar protocolos pro pessoal que inicia reclamações no twitter.
 Listar também os usuários que mais mencionam a locaweb.
 
 A documentação do recurso de busca do twitter está em:
-https://dev.twitter.com/docs/api/1.1/get/search/tweets
-https://dev.twitter.com/docs/platform-objects/tweets
+
+[https://dev.twitter.com/docs/api/1.1/get/search/tweets](https://dev.twitter.com/docs/api/1.1/get/search/tweets)
+
+[https://dev.twitter.com/docs/platform-objects/tweets](https://dev.twitter.com/docs/platform-objects/tweets)
 
 Para simplificar a autenticação do twitter e evitar limites vamos prover respostas mockadas da api de busca do twitter nesta url:
-http://tweeps.locaweb.com.br/
+[http://tweeps.locaweb.com.br/](http://tweeps.locaweb.com.br/)
 
 Para autenticar, envie um header HTTP chamado Username com o seu e-mail. Considere apenas os tweets retornados pela
 primeira "página" do webservice, ou seja, não é necessário varrer os links de próximas páginas.
@@ -30,4 +32,4 @@ Para efeito de testes, vamos considerar que usuário da locaweb no twitter tem o
 
 Você está livre para usar qualquer versão do ruby/rails e framwork gems de sua escolha, apenas indique tudo isto
 em seu Gemfile e/ou .ruby-version. Também queremos instruções de como rodar (sim, mandar executar um bundle
-exec rails s e acessar http://localhost:3000/ conta como instruções!​
+exec rails s e acessar [http://localhost:3000/](http://localhost:3000/) conta como instruções!​

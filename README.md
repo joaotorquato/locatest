@@ -1,6 +1,6 @@
 # Twitter filter app
 
-This is an app to filter all the locaweb mentions on twitter
+This is an app to filter all the locaweb's mentions on twitter
 
 ## Instructions
 
@@ -10,7 +10,7 @@ This is an app to filter all the locaweb mentions on twitter
 
 This project uses:
  -  The 2.3.0 Ruby version.
- -  The 4.2.6 Rails version
+ -  The 4.2.6 Rails version.
 
 You can install ruby with [RVM](https://rvm.io/rvm/install) and then install the correct version of Ruby:
 
@@ -36,4 +36,4 @@ You can run like above:
 
         $ rails server
 
-And then access the link http://localhost:3000/ in your browser.
+And then access the link [http://localhost:3000/](http://localhost:3000/) in your browser.
