@@ -24,19 +24,34 @@ describe Tweet, '.filter_by' do
     expect(tweets.second.screen_name).to eq 'gerlach_madisen'
   end
 
-  it 'should return tweets group by user and ordered by number of tweets' do
-    tweets_mrs_brooks_hahn = mock_tweets_mrs_brooks_hahn
-    tweets_gerlach_madisen = mock_tweets_gerlach_madisen
-    allow(Tweet).to receive(:request)
-      .and_return(tweets_gerlach_madisen + tweets_mrs_brooks_hahn)
+  context 'should return grouped by user' do
+    it 'ordered by number of tweets' do
+      tweets_mrs_brooks_hahn = mock_tweets_mrs_brooks_hahn
+      tweets_gerlach_madisen = mock_tweets_gerlach_madisen
+      allow(Tweet).to receive(:request)
+        .and_return(tweets_gerlach_madisen + tweets_mrs_brooks_hahn)
 
-    tweets = Tweet.filter_by(orderer: :user)
+      tweets = Tweet.filter_by(orderer: :user)
 
-    expect(tweets.first[:user]).to eq 'mrs_brooks_hahn'
-    expect(tweets.first[:tweets].count).to eq 3
+      expect(tweets.first[:user]).to eq 'mrs_brooks_hahn'
+      expect(tweets.first[:tweets].count).to eq 3
 
-    expect(tweets.second[:user]).to eq 'gerlach_madisen'
-    expect(tweets.second[:tweets].count).to eq 2
+      expect(tweets.second[:user]).to eq 'gerlach_madisen'
+      expect(tweets.second[:tweets].count).to eq 2
+    end
+
+    it 'tweets ordered based on followers, retweets and favorites' do
+      tweets_gerlach_madisen = mock_tweets_gerlach_madisen
+      allow(Tweet).to receive(:request)
+        .and_return(tweets_gerlach_madisen)
+
+      tweets = Tweet.filter_by(orderer: :user)
+
+      expect(tweets.first[:tweets].first.text)
+        .to eq '@locaweb this is a super mock test 2'
+      expect(tweets.first[:tweets].second.text)
+        .to eq '@locaweb this is a super mock test 1'
+    end
   end
 end
 
