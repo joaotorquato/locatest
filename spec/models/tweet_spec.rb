@@ -23,6 +23,21 @@ describe Tweet, '.filter_by' do
     expect(tweets.first.screen_name).to eq 'mrs_brooks_hahn'
     expect(tweets.second.screen_name).to eq 'gerlach_madisen'
   end
+
+  it 'should return tweets group by user and ordered by number of tweets' do
+    tweets_mrs_brooks_hahn = mock_tweets_mrs_brooks_hahn
+    tweets_gerlach_madisen = mock_tweets_gerlach_madisen
+    allow(Tweet).to receive(:request)
+      .and_return(tweets_gerlach_madisen + tweets_mrs_brooks_hahn)
+
+    tweets = Tweet.filter_by(orderer: :user)
+
+    expect(tweets.first[:user]).to eq 'mrs_brooks_hahn'
+    expect(tweets.first[:tweets].count).to eq 3
+
+    expect(tweets.second[:user]).to eq 'gerlach_madisen'
+    expect(tweets.second[:tweets].count).to eq 2
+  end
 end
 
 describe Tweet, '.request' do
