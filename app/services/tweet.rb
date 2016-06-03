@@ -14,12 +14,23 @@ class Tweet
     @id = hash['id'].to_i
   end
 
-  def self.filter_by
+  def self.filter_by(orderer: :default)
     tweets = request.select do |tweet|
       tweet.text.include? '@locaweb'
     end
-    tweets.sort_by do |t|
-      - (t.favorite_count + t.retweet_count + t.followers_count)
+    if orderer == :default
+      tweets.sort_by do |t|
+        - (t.favorite_count + t.retweet_count + t.followers_count)
+      end
+    elsif orderer == :user
+      group = tweets.group_by(&:screen_name)
+      users = []
+      group.each do |t|
+        users << { user: t.shift, tweets: t.shift }
+      end
+      users.sort_by do |t|
+        - t[:tweets].count
+      end
     end
   end
 
