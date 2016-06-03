@@ -1,25 +1,45 @@
 <div class="row">
-  <div class="col-md-offset-3 col-md-6 text-center">
+  <div class="col-md-offset-2 col-md-8 text-center">
     <div class="page-header">
-      <h1>Twitter Reponses</h1>
+      <h1>Twitter Responses</h1>
     </div>
   </div>
 </div>
-<% @tweets.each_with_index do |tweet, index| %>
-<div class="row tweet_<%= index %>">
-  <div class="col-md-offset-3 col-md-6">
-    <p>
-      <strong>Posted by</strong> <%= link_to "@#{tweet.screen_name}", tweet.user_profile_link %> <strong><%= link_to "#{time_ago_in_words(tweet.created_at)} ago", tweet.url  %></strong>
-    </p>
-    <p><%= tweet.text %></p>
-    <dl class="dl-horizontal">
-      <dt>Number of Followers:</dt>
-      <dd><%= tweet.followers_count %></dd>
-      <dt>Number of Retweets:</dt>
-      <dd><%= tweet.retweet_count %></dd>
-      <dt>Number of Favorites:</dt>
-      <dd><%= tweet.favorite_count %></dd>
-    </dl>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            All Tweets
+          </a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <% @tweets.each_with_index do |tweet, index| %>
+          <div class="row tweet_<%= index %>">
+            <div class="col-md-offset-1 col-md-10">
+              <p>
+                <strong>Posted by</strong>
+                <%= link_to "@#{tweet.screen_name}", tweet.user_profile_link %>
+                <strong><%= link_to "#{time_ago_in_words(tweet.created_at)} ago", tweet.url  %></strong>
+              </p>
+              <p><%= tweet.text %></p>
+              <dl class="dl-horizontal">
+                <dt>Number of Followers:</dt>
+                <dd><%= tweet.followers_count %></dd>
+                <dt>Number of Retweets:</dt>
+                <dd><%= tweet.retweet_count %></dd>
+                <dt>Number of Favorites:</dt>
+                <dd><%= tweet.favorite_count %></dd>
+              </dl>
+            </div>
+          </div>
+          <hr>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<% end %>

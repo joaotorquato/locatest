@@ -24,3 +24,15 @@ describe Tweet, '.filter_by' do
     expect(tweets.second.screen_name).to eq 'gerlach_madisen'
   end
 end
+
+describe Tweet, '.request' do
+  it 'should return an array of tweets' do
+    all_tweets = mock_tweets_without_locaweb + mock_tweets_locaweb
+    allow(RestClient::Request).to receive(:execute)
+      .and_return(File.read('spec/support/fixtures/tweets.json'))
+
+    tweets = Tweet.request
+
+    expect(tweets).to eq all_tweets
+  end
+end

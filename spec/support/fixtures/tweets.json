@@ -1,0 +1,284 @@
+{
+  "statuses": [
+    {
+      "coordinates": null,
+      "favorited": false,
+      "truncated": false,
+      "created_at": "Mon Sep 24 03:35:21 +0000 2012",
+      "id_str": "1",
+      "entities": {
+        "urls": ["https://twitter.com/joaotorquato/status/733362298316828672"],
+        "hashtags": [],
+        "user_mentions": []
+      },
+      "in_reply_to_user_id_str": "123",
+      "contributors": null,
+      "text": "@other_company this is a tweet test 3",
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "retweet_count": 1,
+      "in_reply_to_status_id_str": "",
+      "id": 1,
+      "geo": null,
+      "retweeted": false,
+      "in_reply_to_user_id": 123,
+      "place": null,
+      "user": {
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_background_tile": false,
+        "name": "Lauriane Dibbert",
+        "profile_image_url": "http://a0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "created_at": "Mon Apr 26 06:01:55 +0000 2010",
+        "location": "LA, CA",
+        "follow_request_sent": null,
+        "profile_link_color": "0084B4",
+        "is_translator": false,
+        "id_str": "215986",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "expanded_url": null,
+                "url": "",
+                "indices": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "default_profile": true,
+        "contributors_enabled": false,
+        "favourites_count": 1,
+        "url": "https://twitter.com/lauriane_dibbert",
+        "profile_image_url_https": "https://si0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "utc_offset": -28800,
+        "id": 215986,
+        "profile_use_background_image": true,
+        "listed_count": 2,
+        "profile_text_color": "333333",
+        "lang": "en",
+        "followers_count": 1231,
+        "protected": false,
+        "notifications": null,
+        "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_color": "C0DEED",
+        "verified": false,
+        "geo_enabled": true,
+        "time_zone": "Pacific Time (US & Canada)",
+        "description": "Born 330 Live 310",
+        "default_profile_image": false,
+        "profile_background_image_url": "http://a0.twimg.com/images/themes/theme1/bg.png",
+        "statuses_count": 579,
+        "friends_count": 109,
+        "following": null,
+        "show_all_inline_media": false,
+        "screen_name": "lauriane_dibbert"
+      },
+      "in_reply_to_screen_name": "",
+      "source": "web",
+      "in_reply_to_status_id": null
+    },
+    {
+      "coordinates": null,
+      "favorited": false,
+      "truncated": false,
+      "created_at": "Mon Sep 24 03:35:21 +0000 2012",
+      "id_str": "2",
+      "entities": {
+        "urls": ["https://twitter.com/joaotorquato/status/732578265261604865"],
+        "hashtags": [],
+        "user_mentions": [
+          {
+            "screen_name": "haag_miss_merle",
+            "name": "Haag Miss Merle",
+            "id": 38778,
+            "id_str": "38778",
+            "indices": [
+              37,
+              53
+            ]
+          }
+        ]
+      },
+      "in_reply_to_user_id_str": "42",
+      "contributors": null,
+      "text": "@locaweb this is a tweet test 1",
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "retweet_count": 4,
+      "in_reply_to_status_id_str": "",
+      "id": 2,
+      "geo": null,
+      "retweeted": true,
+      "in_reply_to_user_id": 42,
+      "place": null,
+      "user": {
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_background_tile": false,
+        "name": "Gerlach Madisen",
+        "profile_image_url": "http://a0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "created_at": "Mon Apr 26 06:01:55 +0000 2010",
+        "location": "LA, CA",
+        "follow_request_sent": null,
+        "profile_link_color": "0084B4",
+        "is_translator": false,
+        "id_str": "347338",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "expanded_url": null,
+                "url": "",
+                "indices": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "default_profile": true,
+        "contributors_enabled": false,
+        "favourites_count": 2,
+        "url": "https://twitter.com/gerlach_madisen",
+        "profile_image_url_https": "https://si0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "utc_offset": -28800,
+        "id": 347338,
+        "profile_use_background_image": true,
+        "listed_count": 2,
+        "profile_text_color": "333333",
+        "lang": "en",
+        "followers_count": 1000,
+        "protected": false,
+        "notifications": null,
+        "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_color": "C0DEED",
+        "verified": false,
+        "geo_enabled": true,
+        "time_zone": "Pacific Time (US & Canada)",
+        "description": "Born 330 Live 310",
+        "default_profile_image": false,
+        "profile_background_image_url": "http://a0.twimg.com/images/themes/theme1/bg.png",
+        "statuses_count": 579,
+        "friends_count": 408,
+        "following": null,
+        "show_all_inline_media": false,
+        "screen_name": "gerlach_madisen"
+      },
+      "in_reply_to_screen_name": "",
+      "source": "web",
+      "in_reply_to_status_id": null
+    },
+    {
+      "coordinates": null,
+      "favorited": true,
+      "truncated": false,
+      "created_at": "Mon Sep 24 03:35:21 +0000 2012",
+      "id_str": "3",
+      "entities": {
+        "urls": ["https://twitter.com/denhamsadler/status/716520457168498688"],
+        "hashtags": [],
+        "user_mentions": [
+          {
+            "screen_name": "locaweb",
+            "name": "Locaweb",
+            "id": 42,
+            "id_str": "42",
+            "indices": [
+              0,
+              8
+            ]
+          }
+        ]
+      },
+      "in_reply_to_user_id_str": "42",
+      "contributors": null,
+      "text": "@locaweb this is a tweet test 2",
+      "metadata": {
+        "iso_language_code": "pt",
+        "result_type": "recent"
+      },
+      "retweet_count": 10,
+      "in_reply_to_status_id_str": "",
+      "id": 3,
+      "geo": null,
+      "retweeted": true,
+      "in_reply_to_user_id": 42,
+      "place": null,
+      "user": {
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_background_tile": false,
+        "name": "Mrs Brooks Hahn",
+        "profile_image_url": "http://a0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "created_at": "Mon Apr 26 06:01:55 +0000 2010",
+        "location": "LA, CA",
+        "follow_request_sent": null,
+        "profile_link_color": "0084B4",
+        "is_translator": false,
+        "id_str": "79851",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "expanded_url": null,
+                "url": "",
+                "indices": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "default_profile": true,
+        "contributors_enabled": false,
+        "favourites_count": 7,
+        "url": "https://twitter.com/mrs_brooks_hahn",
+        "profile_image_url_https": "https://si0.twimg.com/profile_images/2359746665/1v6zfgqo8g0d3mk7ii5s_normal.jpeg",
+        "utc_offset": -28800,
+        "id": 79851,
+        "profile_use_background_image": true,
+        "listed_count": 2,
+        "profile_text_color": "333333",
+        "lang": "en",
+        "followers_count": 2000,
+        "protected": false,
+        "notifications": null,
+        "profile_background_image_url_https": "https://si0.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_color": "C0DEED",
+        "verified": false,
+        "geo_enabled": true,
+        "time_zone": "Pacific Time (US & Canada)",
+        "description": "Born 330 Live 310",
+        "default_profile_image": false,
+        "profile_background_image_url": "http://a0.twimg.com/images/themes/theme1/bg.png",
+        "statuses_count": 579,
+        "friends_count": 890,
+        "following": null,
+        "show_all_inline_media": false,
+        "screen_name": "mrs_brooks_hahn"
+      },
+      "in_reply_to_screen_name": "locaweb",
+      "source": "web",
+      "in_reply_to_status_id": null
+    }
+  ]
+}
