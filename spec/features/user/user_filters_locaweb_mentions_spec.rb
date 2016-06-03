@@ -12,14 +12,7 @@ feature 'User filters locaweb\'s mentions on twitter' do
     click_on 'Filter Locaweb\'s mentions on twitter'
 
     tweets_locaweb.each do |tweet|
-      expect(page).to have_link "@#{tweet.screen_name}"
-      expect(page).to have_link "#{time_ago_in_words(tweet.created_at)} ago"
-      expect(page).to have_content tweet.text
-      expect(page).to have_content "Number of Retweets: #{tweet.retweet_count}"
-      expect(page)
-        .to have_content "Number of Followers: #{tweet.followers_count}"
-      expect(page)
-        .to have_content "Number of Favorites: #{tweet.favorite_count}"
+      display_tweet(tweet)
     end
 
     tweets_without_locaweb.each do |tweet|
@@ -75,16 +68,7 @@ feature 'User filters locaweb\'s mentions on twitter' do
           expect(page)
             .to have_content '@mrs_brooks_hahn has 3 tweets mentioning @locaweb'
           tweets_mrs_brooks_hahn.each do |tweet|
-            expect(page).to have_link "@#{tweet.screen_name}"
-            expect(page)
-              .to have_link "#{time_ago_in_words(tweet.created_at)} ago"
-            expect(page).to have_content tweet.text
-            expect(page)
-              .to have_content "Number of Retweets: #{tweet.retweet_count}"
-            expect(page)
-              .to have_content "Number of Followers: #{tweet.followers_count}"
-            expect(page)
-              .to have_content "Number of Favorites: #{tweet.favorite_count}"
+            display_tweet(tweet)
           end
         end
 
@@ -92,16 +76,7 @@ feature 'User filters locaweb\'s mentions on twitter' do
           expect(page)
             .to have_content '@gerlach_madisen has 2 tweets mentioning @locaweb'
           tweets_gerlach_madisen.each do |tweet|
-            expect(page).to have_link "@#{tweet.screen_name}"
-            expect(page)
-              .to have_link "#{time_ago_in_words(tweet.created_at)} ago"
-            expect(page).to have_content tweet.text
-            expect(page)
-              .to have_content "Number of Retweets: #{tweet.retweet_count}"
-            expect(page)
-              .to have_content "Number of Followers: #{tweet.followers_count}"
-            expect(page)
-              .to have_content "Number of Favorites: #{tweet.favorite_count}"
+            display_tweet(tweet)
           end
         end
       end
@@ -136,5 +111,16 @@ feature 'User filters locaweb\'s mentions on twitter' do
         end
       end
     end
+  end
+
+  def display_tweet(tweet)
+    expect(page).to have_link "@#{tweet.screen_name}"
+    expect(page).to have_link "#{time_ago_in_words(tweet.created_at)} ago"
+    expect(page).to have_content tweet.text
+    expect(page).to have_content "Number of Retweets: #{tweet.retweet_count}"
+    expect(page)
+      .to have_content "Number of Followers: #{tweet.followers_count}"
+    expect(page)
+      .to have_content "Number of Favorites: #{tweet.favorite_count}"
   end
 end

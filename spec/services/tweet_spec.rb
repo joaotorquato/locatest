@@ -31,7 +31,7 @@ describe Tweet, '.filter_by' do
       allow(Tweet).to receive(:request)
         .and_return(tweets_gerlach_madisen + tweets_mrs_brooks_hahn)
 
-      tweets = Tweet.filter_by(orderer: :user)
+      tweets = Tweet.filter_by(orderer: UserOrder.new)
 
       expect(tweets.first[:user]).to eq 'mrs_brooks_hahn'
       expect(tweets.first[:tweets].count).to eq 3
@@ -45,7 +45,7 @@ describe Tweet, '.filter_by' do
       allow(Tweet).to receive(:request)
         .and_return(tweets_gerlach_madisen)
 
-      tweets = Tweet.filter_by(orderer: :user)
+      tweets = Tweet.filter_by(orderer: UserOrder.new)
 
       expect(tweets.first[:tweets].first.text)
         .to eq '@locaweb this is a super mock test 2'
