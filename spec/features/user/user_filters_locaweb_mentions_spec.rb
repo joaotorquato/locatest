@@ -59,46 +59,80 @@ feature 'User filters locaweb\'s mentions on twitter' do
     end
   end
 
-  scenario 'grouped by user and ordered by number of users\' tweets' do
-    tweets_gerlach_madisen = mock_tweets_gerlach_madisen
-    tweets_mrs_brooks_hahn = mock_tweets_mrs_brooks_hahn
-    allow(Tweet).to receive(:request)
-      .and_return(tweets_gerlach_madisen + tweets_mrs_brooks_hahn)
+  context 'grouped by user' do
+    scenario 'ordered by number of users\' tweets' do
+      tweets_gerlach_madisen = mock_tweets_gerlach_madisen
+      tweets_mrs_brooks_hahn = mock_tweets_mrs_brooks_hahn
+      allow(Tweet).to receive(:request)
+        .and_return(tweets_gerlach_madisen + tweets_mrs_brooks_hahn)
 
-    visit root_path
+      visit root_path
 
-    click_on 'Filter Locaweb\'s mentions on twitter'
+      click_on 'Filter Locaweb\'s mentions on twitter'
 
-    within('.tweets-grouped-by-user') do
-      within('.user_0') do
-        expect(page)
-          .to have_content '@mrs_brooks_hahn has 3 tweets mentioning @locaweb'
-        tweets_mrs_brooks_hahn.each do |tweet|
-          expect(page).to have_link "@#{tweet.screen_name}"
-          expect(page).to have_link "#{time_ago_in_words(tweet.created_at)} ago"
-          expect(page).to have_content tweet.text
+      within('.tweets-grouped-by-user') do
+        within('.user_0') do
           expect(page)
-            .to have_content "Number of Retweets: #{tweet.retweet_count}"
+            .to have_content '@mrs_brooks_hahn has 3 tweets mentioning @locaweb'
+          tweets_mrs_brooks_hahn.each do |tweet|
+            expect(page).to have_link "@#{tweet.screen_name}"
+            expect(page)
+              .to have_link "#{time_ago_in_words(tweet.created_at)} ago"
+            expect(page).to have_content tweet.text
+            expect(page)
+              .to have_content "Number of Retweets: #{tweet.retweet_count}"
+            expect(page)
+              .to have_content "Number of Followers: #{tweet.followers_count}"
+            expect(page)
+              .to have_content "Number of Favorites: #{tweet.favorite_count}"
+          end
+        end
+
+        within('.user_1') do
           expect(page)
-            .to have_content "Number of Followers: #{tweet.followers_count}"
-          expect(page)
-            .to have_content "Number of Favorites: #{tweet.favorite_count}"
+            .to have_content '@gerlach_madisen has 2 tweets mentioning @locaweb'
+          tweets_gerlach_madisen.each do |tweet|
+            expect(page).to have_link "@#{tweet.screen_name}"
+            expect(page)
+              .to have_link "#{time_ago_in_words(tweet.created_at)} ago"
+            expect(page).to have_content tweet.text
+            expect(page)
+              .to have_content "Number of Retweets: #{tweet.retweet_count}"
+            expect(page)
+              .to have_content "Number of Followers: #{tweet.followers_count}"
+            expect(page)
+              .to have_content "Number of Favorites: #{tweet.favorite_count}"
+          end
         end
       end
+    end
 
-      within('.user_1') do
-        expect(page)
-          .to have_content '@gerlach_madisen has 2 tweets mentioning @locaweb'
-        tweets_gerlach_madisen.each do |tweet|
-          expect(page).to have_link "@#{tweet.screen_name}"
-          expect(page).to have_link "#{time_ago_in_words(tweet.created_at)} ago"
-          expect(page).to have_content tweet.text
+    scenario 'and tweets ordered based on followers, retweets and favorites' do
+      allow(Tweet).to receive(:request)
+        .and_return(mock_tweets_gerlach_madisen)
+
+      visit root_path
+
+      click_on 'Filter Locaweb\'s mentions on twitter'
+
+      within('.tweets-grouped-by-user') do
+        within('.user_0') do
           expect(page)
-            .to have_content "Number of Retweets: #{tweet.retweet_count}"
-          expect(page)
-            .to have_content "Number of Followers: #{tweet.followers_count}"
-          expect(page)
-            .to have_content "Number of Favorites: #{tweet.favorite_count}"
+            .to have_content '@gerlach_madisen has 2 tweets mentioning @locaweb'
+          within('.tweet_0') do
+            expect(page).to have_link '@gerlach_madisen'
+            expect(page).to have_content '@locaweb this is a super mock test 2'
+            expect(page).to have_content 'Number of Retweets: 6'
+            expect(page).to have_content 'Number of Followers: 1000'
+            expect(page).to have_content 'Number of Favorites: 2'
+          end
+          within('.tweet_1') do
+            expect(page).to have_link '@gerlach_madisen'
+            expect(page).to have_content '@locaweb this is a super mock test 1'
+            expect(page).to have_content 'Number of Retweets: 3'
+            expect(page).to have_content 'Number of Followers: 1000'
+            expect(page).to have_content 'Number of Favorites: 1'
+          end
         end
       end
     end
