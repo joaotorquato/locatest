@@ -12,8 +12,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
+gem 'pg', group: :production
 gem 'simple_form'
-gem 'sqlite3'
 gem 'rest-client', '~> 1.8'
 
 group :development, :test do
@@ -25,6 +25,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'simplecov', require: false
   gem 'byebug'
+  gem 'sqlite3'
 end
 
 group :development do
